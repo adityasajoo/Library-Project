@@ -1,0 +1,54 @@
+
+/* Css that I wrote  */
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.lib{
+    padding: 15px;
+    display: flex;
+    background-color: #A83838;
+    color: azure;
+
+}
+
+
+
+.flex-container{
+    display: flex;
+}
+
+label{
+    font-weight: bold;
+}
+
+
+.my-search-btn{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #A83838;
+    border: none;
+    color: #ffffff;
+
+}
+
+.my-search-btn:hover{
+    background-color: black;
+}
+
+thead{
+    background: #A83838;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* tr:nth-child(even) {background-color: #A83838} */
+

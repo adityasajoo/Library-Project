@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d0b7109c1c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script language="javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/landing.css">
+
+    <title> GRV</title>
+    
+</head>
+<body>
+    <div class="lib jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4"> GVS Library</h1>
+          <p class="lead">Search for your favourite book !</p>
+        </div>
+
+      </div>
+
+      <div class="container">
+
+        <form action="/" method="post">
+            <div class="flex-container">
+                <div class="form-group col-lg-6">
+                    <label for="title">Title  </label>
+                    <input id="title" name="title" class="form-control" type="text" placeholder="Title">
+                </div>
+                 <div class="form-group col-lg-4">
+                    <label for="author">Author  </label>
+                    <input id="author" name="author" class="form-control" type="text" placeholder="Author">
+                </div>
+                
+            </div>
+            <div class="search">
+                <div class="form-group ">
+                    <button id="btn" class="btn btn-sm btn-success my-search-btn">Search</button>
+                </div>
+            </div>
+            <%- include ("./partials/messages") %>
+
+        </form>
+
+
+
+
+
+        <% if(typeof books != 'undefined'){ %>
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= msg %> books found 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+            <table class="table table-bordered ">
+                <thead >
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Genre</th>
+                        <th scope="col">Publisher</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% books.forEach((book)=>{ %>
+                        <tr>
+                            <td><%= book.title %></td>
+                            <td><%= book.author %></td>
+                            <td><%= book.genre %></td>
+                            <td><%= book.publisher %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+            <% } %>
+      </div>
+
+
+
+</body>
+</html>
